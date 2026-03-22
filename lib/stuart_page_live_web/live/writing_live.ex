@@ -20,6 +20,11 @@ defmodule StuartPageLiveWeb.WritingLive do
             <a href="https://revelry.co/author/stuart-page/" target="_blank" class="link link-primary">
               Revelry Insights</a>.
           </p>
+          <p class="text-base-content/50 text-sm mt-3 italic">
+            I use AI extensively in my programming, but almost never in my writing.
+            Writing is the best way I have have to communicate my thoughts, both to others
+            but also to myself, and I feel like running those thoughts through an LLM would dilute them.
+          </p>
         </div>
         <div class="flex flex-col gap-3 fade-in-children">
           <.post_card :for={post <- @posts} post={post} />
