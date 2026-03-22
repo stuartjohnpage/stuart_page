@@ -50,7 +50,7 @@ defmodule StuartPageLiveWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView
+      use Phoenix.LiveView, layout: {StuartPageLiveWeb.Layouts, :app}
 
       unquote(html_helpers())
     end

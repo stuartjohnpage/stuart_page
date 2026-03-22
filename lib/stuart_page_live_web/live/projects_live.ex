@@ -11,17 +11,23 @@ defmodule StuartPageLiveWeb.ProjectsLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <section class="py-12">
-      <h1 class="text-4xl font-bold mb-12">Projects</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div :for={project <- @projects} class="card bg-base-200 shadow-xl hover:shadow-2xl transition-shadow">
+    <section class="py-16 max-w-5xl mx-auto">
+      <div class="mb-12">
+        <h1 class="text-4xl font-bold mb-2">Projects</h1>
+        <p class="text-base-content/60">Things I've built, mostly with Elixir and Phoenix.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          :for={project <- @projects}
+          class="card bg-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-200"
+        >
           <div class="card-body">
             <h2 class="card-title">{project.name}</h2>
-            <p class="text-base-content/70">{project.description}</p>
-            <div class="flex flex-wrap gap-1 mt-2">
+            <p class="text-base-content/70 leading-relaxed">{project.description}</p>
+            <div class="flex flex-wrap gap-1.5 mt-3">
               <span :for={tag <- project.tags} class="badge badge-outline badge-sm">{tag}</span>
             </div>
-            <div class="card-actions justify-end mt-4">
+            <div class="card-actions justify-end mt-6 pt-4 border-t border-base-300">
               <a :if={project[:blog]} href={project.blog} target="_blank" class="btn btn-ghost btn-sm">
                 Blog Post
               </a>
@@ -29,7 +35,7 @@ defmodule StuartPageLiveWeb.ProjectsLive do
                 Source
               </a>
               <a :if={project.url} href={project.url} target="_blank" class="btn btn-primary btn-sm">
-                Live Demo
+                Live Demo <.icon name="hero-arrow-top-right-on-square-mini" class="size-3.5" />
               </a>
             </div>
           </div>

@@ -11,23 +11,25 @@ defmodule StuartPageLiveWeb.WritingLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <section class="py-12">
-      <h1 class="text-4xl font-bold mb-4">Writing</h1>
-      <p class="text-base-content/60 mb-12">
-        Blog posts published on
-        <a href="https://revelry.co/author/stuart-page/" target="_blank" class="link link-primary">
-          Revelry Insights</a>.
-      </p>
-      <div class="grid grid-cols-1 gap-4">
+    <section class="py-16 max-w-3xl mx-auto">
+      <div class="mb-12">
+        <h1 class="text-4xl font-bold mb-2">Writing</h1>
+        <p class="text-base-content/60">
+          Blog posts published on
+          <a href="https://revelry.co/author/stuart-page/" target="_blank" class="link link-primary">
+            Revelry Insights</a>.
+        </p>
+      </div>
+      <div class="flex flex-col gap-3">
         <a
           :for={post <- @posts}
           href={post.url}
           target="_blank"
-          class="card bg-base-200 shadow hover:shadow-xl transition-shadow"
+          class="group card bg-base-200 shadow hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
         >
-          <div class="card-body flex-row justify-between items-center py-6">
-            <h2 class="card-title text-base">{post.title}</h2>
-            <span class="text-base-content/50 text-sm whitespace-nowrap ml-4">{post.date}</span>
+          <div class="card-body flex-row justify-between items-center py-5 gap-4">
+            <h2 class="font-medium group-hover:text-primary transition-colors">{post.title}</h2>
+            <span class="text-base-content/40 text-sm whitespace-nowrap">{post.date}</span>
           </div>
         </a>
       </div>

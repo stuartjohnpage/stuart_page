@@ -17,16 +17,16 @@ defmodule StuartPageLiveWeb.HomeLive do
   def render(assigns) do
     ~H"""
     <%!-- Hero Section --%>
-    <section class="hero min-h-[70vh] bg-base-200 rounded-box">
-      <div class="hero-content flex-col lg:flex-row-reverse gap-12">
+    <section class="hero min-h-[70vh] bg-base-200 rounded-box my-8">
+      <div class="hero-content flex-col lg:flex-row-reverse gap-12 py-16">
         <img
           src={~p"/images/profile.jpg"}
-          class="max-w-xs rounded-full shadow-2xl ring-4 ring-primary/20"
+          class="w-48 h-48 lg:w-64 lg:h-64 rounded-full shadow-2xl ring-4 ring-primary/20 object-cover"
           alt="Stuart Page"
         />
-        <div>
+        <div class="max-w-lg">
           <h1 class="text-5xl font-bold">Stuart Page</h1>
-          <p class="py-6 text-lg text-base-content/70 max-w-lg">
+          <p class="py-6 text-lg text-base-content/70 leading-relaxed">
             Software engineer and AI enthusiast at
             <a href="https://revelry.co" target="_blank" class="link link-primary">Revelry</a>
             since 2021. Originally from the UK, now based in Texas. I build real-time web applications
@@ -55,27 +55,59 @@ defmodule StuartPageLiveWeb.HomeLive do
 
     <%!-- Featured Projects --%>
     <section class="py-16">
-      <div class="flex justify-between items-center mb-12">
+      <div class="flex justify-between items-center mb-10">
         <h2 class="text-3xl font-bold">Projects</h2>
         <.link navigate={~p"/projects"} class="btn btn-ghost btn-sm">
           View all <.icon name="hero-arrow-right-mini" class="size-4" />
         </.link>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <.project_card :for={project <- @projects} project={project} />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          :for={project <- @projects}
+          class="card bg-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-200"
+        >
+          <div class="card-body">
+            <h3 class="card-title">{project.name}</h3>
+            <p class="text-base-content/70 leading-relaxed">{project.description}</p>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span :for={tag <- project.tags} class="badge badge-outline badge-sm">{tag}</span>
+            </div>
+            <div class="card-actions justify-end mt-6 pt-4 border-t border-base-300">
+              <a :if={project[:blog]} href={project.blog} target="_blank" class="btn btn-ghost btn-sm">
+                Blog Post
+              </a>
+              <a href={project.github} target="_blank" class="btn btn-ghost btn-sm">
+                Source
+              </a>
+              <a :if={project.url} href={project.url} target="_blank" class="btn btn-primary btn-sm">
+                Live Demo <.icon name="hero-arrow-top-right-on-square-mini" class="size-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <%!-- Featured Writing --%>
     <section class="py-16">
-      <div class="flex justify-between items-center mb-12">
+      <div class="flex justify-between items-center mb-10">
         <h2 class="text-3xl font-bold">Writing</h2>
         <.link navigate={~p"/writing"} class="btn btn-ghost btn-sm">
           View all <.icon name="hero-arrow-right-mini" class="size-4" />
         </.link>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <.post_card :for={post <- @posts} post={post} />
+      <div class="flex flex-col gap-3">
+        <a
+          :for={post <- @posts}
+          href={post.url}
+          target="_blank"
+          class="group card bg-base-200 shadow hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="card-body flex-row justify-between items-center py-5 gap-4">
+            <h3 class="font-medium group-hover:text-primary transition-colors">{post.title}</h3>
+            <span class="text-base-content/40 text-sm whitespace-nowrap">{post.date}</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -83,7 +115,7 @@ defmodule StuartPageLiveWeb.HomeLive do
     <section class="py-16">
       <h2 class="text-3xl font-bold text-center mb-12">The Real Stars</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
-        <div class="card bg-base-200 shadow-xl">
+        <div class="card bg-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-200">
           <figure class="px-4 pt-4">
             <img src={~p"/images/mowgli.jpg"} alt="Mowgli the cat" class="rounded-xl object-cover h-64 w-full" />
           </figure>
@@ -91,7 +123,7 @@ defmodule StuartPageLiveWeb.HomeLive do
             <h3 class="card-title">Mowgli</h3>
           </div>
         </div>
-        <div class="card bg-base-200 shadow-xl">
+        <div class="card bg-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-200">
           <figure class="px-4 pt-4">
             <img src={~p"/images/max.jpg"} alt="Max the cat" class="rounded-xl object-cover h-64 w-full" />
           </figure>
@@ -103,7 +135,7 @@ defmodule StuartPageLiveWeb.HomeLive do
     </section>
 
     <%!-- Footer --%>
-    <footer class="footer footer-center p-10 text-base-content/60">
+    <footer class="footer footer-center p-10 mt-8 text-base-content/60 border-t border-base-200">
       <div>
         <p>
           Built with
@@ -114,42 +146,6 @@ defmodule StuartPageLiveWeb.HomeLive do
         </p>
       </div>
     </footer>
-    """
-  end
-
-  defp project_card(assigns) do
-    ~H"""
-    <div class="card bg-base-200 shadow-xl hover:shadow-2xl transition-shadow">
-      <div class="card-body">
-        <h3 class="card-title">{@project.name}</h3>
-        <p class="text-base-content/70">{@project.description}</p>
-        <div class="flex flex-wrap gap-1 mt-2">
-          <span :for={tag <- @project.tags} class="badge badge-outline badge-sm">{tag}</span>
-        </div>
-        <div class="card-actions justify-end mt-4">
-          <a :if={@project[:blog]} href={@project.blog} target="_blank" class="btn btn-ghost btn-sm">
-            Blog Post
-          </a>
-          <a href={@project.github} target="_blank" class="btn btn-ghost btn-sm">
-            Source
-          </a>
-          <a :if={@project.url} href={@project.url} target="_blank" class="btn btn-primary btn-sm">
-            Live Demo
-          </a>
-        </div>
-      </div>
-    </div>
-    """
-  end
-
-  defp post_card(assigns) do
-    ~H"""
-    <a href={@post.url} target="_blank" class="card bg-base-200 shadow-xl hover:shadow-2xl transition-shadow">
-      <div class="card-body">
-        <h3 class="card-title text-base">{@post.title}</h3>
-        <p class="text-base-content/50 text-sm">{@post.date}</p>
-      </div>
-    </a>
     """
   end
 end
