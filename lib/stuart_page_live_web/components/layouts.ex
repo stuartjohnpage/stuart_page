@@ -36,46 +36,67 @@ defmodule StuartPageLiveWeb.Layouts do
   def app(assigns) do
     ~H"""
     <header class="navbar bg-base-100/80 backdrop-blur-sm sticky top-0 z-50 border-b border-base-200 px-4 sm:px-6 lg:px-8">
-      <div class="flex-1">
-        <a href="/" class="btn btn-ghost text-xl font-bold">Stuart Page</a>
-      </div>
-      <div class="flex-none">
-        <ul class="flex flex-column px-1 space-x-2 items-center">
-          <li>
-            <.link navigate={~p"/projects"} class="btn btn-ghost btn-sm">Projects</.link>
-          </li>
-          <li>
-            <.link navigate={~p"/writing"} class="btn btn-ghost btn-sm">Writing</.link>
-          </li>
+      <div class="flex-1"><a href="/" class="btn btn-ghost text-xl font-bold">Stuart Page</a></div>
+       <%!-- Desktop nav --%>
+      <div class="flex-none hidden md:block">
+        <ul class="flex px-1 space-x-2 items-center">
+          <li><.link navigate={~p"/projects"} class="btn btn-ghost btn-sm">Projects</.link></li>
+          
+          <li><.link navigate={~p"/writing"} class="btn btn-ghost btn-sm">Writing</.link></li>
+          
           <li>
             <a href="https://github.com/stuartjohnpage" target="_blank" class="btn btn-ghost btn-sm">
               GitHub
             </a>
           </li>
+          
           <li>
-            <a href="https://www.linkedin.com/in/stuartjohnpage" target="_blank" class="btn btn-ghost btn-sm">
+            <a
+              href="https://www.linkedin.com/in/stuartjohnpage"
+              target="_blank"
+              class="btn btn-ghost btn-sm"
+            >
               LinkedIn
             </a>
           </li>
+          
           <li>
-            <a href="https://revelry.co" target="_blank" class="btn btn-ghost btn-sm">
-              Revelry
-            </a>
+            <a href="https://revelry.co" target="_blank" class="btn btn-ghost btn-sm">Revelry</a>
           </li>
-          <li>
-            <.theme_toggle />
-          </li>
+          
+          <li><.theme_toggle /></li>
         </ul>
+      </div>
+       <%!-- Mobile nav --%>
+      <div class="flex-none flex items-center gap-2 md:hidden">
+        <.theme_toggle />
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
+            <.icon name="hero-bars-3" class="size-5" />
+          </div>
+          
+          <ul
+            tabindex="0"
+            class="dropdown-content menu bg-base-200 rounded-box z-10 w-52 p-2 shadow-lg mt-2"
+          >
+            <li><.link navigate={~p"/projects"}>Projects</.link></li>
+            
+            <li><.link navigate={~p"/writing"}>Writing</.link></li>
+            
+            <li><a href="https://github.com/stuartjohnpage" target="_blank">GitHub</a></li>
+            
+            <li><a href="https://www.linkedin.com/in/stuartjohnpage" target="_blank">LinkedIn</a></li>
+            
+            <li><a href="https://revelry.co" target="_blank">Revelry</a></li>
+          </ul>
+        </div>
       </div>
     </header>
 
     <main class="px-4 py-8 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-6xl">
-        {@inner_content}
-      </div>
+      <div class="mx-auto max-w-6xl">{@inner_content}</div>
     </main>
-
-    <.flash_group flash={@flash} />
+     <.flash_group flash={@flash} />
     """
   end
 
@@ -92,9 +113,7 @@ defmodule StuartPageLiveWeb.Layouts do
   def flash_group(assigns) do
     ~H"""
     <div id={@id} aria-live="polite">
-      <.flash kind={:info} flash={@flash} />
-      <.flash kind={:error} flash={@flash} />
-
+      <.flash kind={:info} flash={@flash} /> <.flash kind={:error} flash={@flash} />
       <.flash
         id="client-error"
         kind={:error}
@@ -106,7 +125,7 @@ defmodule StuartPageLiveWeb.Layouts do
         {gettext("Attempting to reconnect")}
         <.icon name="hero-arrow-path" class="ml-1 size-3 motion-safe:animate-spin" />
       </.flash>
-
+      
       <.flash
         id="server-error"
         kind={:error}
@@ -131,7 +150,6 @@ defmodule StuartPageLiveWeb.Layouts do
     ~H"""
     <div class="card relative flex flex-row items-center border-2 border-base-300 bg-base-300 rounded-full">
       <div class="absolute w-1/3 h-full rounded-full border-1 border-base-200 bg-base-100 brightness-200 left-0 [[data-theme=light]_&]:left-1/3 [[data-theme=dark]_&]:left-2/3 transition-[left]" />
-
       <button
         class="flex p-2 cursor-pointer w-1/3"
         phx-click={JS.dispatch("phx:set-theme")}
@@ -139,7 +157,6 @@ defmodule StuartPageLiveWeb.Layouts do
       >
         <.icon name="hero-computer-desktop-micro" class="size-4 opacity-75 hover:opacity-100" />
       </button>
-
       <button
         class="flex p-2 cursor-pointer w-1/3"
         phx-click={JS.dispatch("phx:set-theme")}
@@ -147,7 +164,6 @@ defmodule StuartPageLiveWeb.Layouts do
       >
         <.icon name="hero-sun-micro" class="size-4 opacity-75 hover:opacity-100" />
       </button>
-
       <button
         class="flex p-2 cursor-pointer w-1/3"
         phx-click={JS.dispatch("phx:set-theme")}

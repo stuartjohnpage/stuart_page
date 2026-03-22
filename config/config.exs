@@ -10,8 +10,7 @@ import Config
 config :stuart_page_live,
   generators: [timestamp_type: :utc_datetime]
 
-config :phoenix_live_view, :colocated_js,
-  disable_symlink_warning: true
+config :phoenix_live_view, :colocated_js, disable_symlink_warning: true
 
 # Configure the endpoint
 config :stuart_page_live, StuartPageLiveWeb.Endpoint,
