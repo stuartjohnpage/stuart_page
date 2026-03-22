@@ -33,7 +33,7 @@ defmodule StuartPageLive.Content do
       %Project{
         name: "Flappy Phoenix",
         description:
-          "A Flappy Bird clone built entirely in Phoenix LiveView with power-ups, increasing difficulty, and a scoring system.",
+          "A Flappy Bird inspired game built entirely in Phoenix LiveView with power-ups, increasing difficulty, and a scoring system.",
         url: "https://flappyphoenix.fly.dev/",
         github: "https://github.com/stuartjohnpage/flappyphoenix",
         blog: "https://revelry.co/insights/development/elixir/build-flappybird-using-liveview/"
