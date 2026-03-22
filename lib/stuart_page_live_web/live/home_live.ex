@@ -42,6 +42,29 @@ defmodule StuartPageLiveWeb.HomeLive do
       </div>
     </section>
 
+    <%!-- Featured Writing --%>
+    <section class="py-16">
+      <div class="flex justify-between items-center mb-10">
+        <h2 class="text-3xl font-bold">Writing</h2>
+        <.link navigate={~p"/writing"} class="btn btn-ghost btn-sm">
+          View all <.icon name="hero-arrow-right-mini" class="size-4" />
+        </.link>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a
+          :for={post <- @posts}
+          href={post.url}
+          target="_blank"
+          class="group card bg-base-200 shadow hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="card-body flex-row justify-between items-center py-5 gap-4">
+            <h3 class="font-medium group-hover:text-primary transition-colors">{post.title}</h3>
+            <span class="text-base-content/40 text-sm whitespace-nowrap">{post.date}</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <%!-- Featured Projects --%>
     <section class="py-16">
       <div class="flex justify-between items-center mb-10">
@@ -87,29 +110,6 @@ defmodule StuartPageLiveWeb.HomeLive do
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <%!-- Featured Writing --%>
-    <section class="py-16">
-      <div class="flex justify-between items-center mb-10">
-        <h2 class="text-3xl font-bold">Writing</h2>
-        <.link navigate={~p"/writing"} class="btn btn-ghost btn-sm">
-          View all <.icon name="hero-arrow-right-mini" class="size-4" />
-        </.link>
-      </div>
-      <div class="flex flex-col gap-3">
-        <a
-          :for={post <- @posts}
-          href={post.url}
-          target="_blank"
-          class="group card bg-base-200 shadow hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-        >
-          <div class="card-body flex-row justify-between items-center py-5 gap-4">
-            <h3 class="font-medium group-hover:text-primary transition-colors">{post.title}</h3>
-            <span class="text-base-content/40 text-sm whitespace-nowrap">{post.date}</span>
-          </div>
-        </a>
       </div>
     </section>
 
