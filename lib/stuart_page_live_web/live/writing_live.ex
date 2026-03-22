@@ -1,7 +1,7 @@
 defmodule StuartPageLiveWeb.WritingLive do
   use StuartPageLiveWeb, :live_view
 
-  alias StuartPageLiveWeb.Content
+  alias StuartPageLive.Content
 
   @impl true
   def mount(_params, _session, socket) do
@@ -21,17 +21,7 @@ defmodule StuartPageLiveWeb.WritingLive do
         </p>
       </div>
       <div class="flex flex-col gap-3">
-        <a
-          :for={post <- @posts}
-          href={post.url}
-          target="_blank"
-          class="group card bg-base-200 shadow hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-        >
-          <div class="card-body flex-row justify-between items-center py-5 gap-4">
-            <h2 class="font-medium group-hover:text-primary transition-colors">{post.title}</h2>
-            <span class="text-base-content/40 text-sm whitespace-nowrap">{post.date}</span>
-          </div>
-        </a>
+        <.post_card :for={post <- @posts} post={post} />
       </div>
     </section>
     """

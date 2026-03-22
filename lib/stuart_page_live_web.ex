@@ -86,6 +86,7 @@ defmodule StuartPageLiveWeb do
       import Phoenix.HTML
       # Core UI components
       import StuartPageLiveWeb.CoreComponents
+      import StuartPageLiveWeb.Cards
 
       # Common modules used in templates
       alias Phoenix.LiveView.JS
