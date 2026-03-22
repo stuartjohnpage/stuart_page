@@ -1,6 +1,6 @@
 defmodule StuartPageLiveWeb.Content do
   @moduledoc """
-  Static content for the site — projects and blog posts.
+  Static content for the site — projects, open source, and blog posts.
   """
 
   def projects do
@@ -10,8 +10,7 @@ defmodule StuartPageLiveWeb.Content do
         description:
           "A real-time guitar toolkit with a tuner, amp effects chain with oscilloscope, and a rhythm game — all powered by Rust/WASM audio processing and Phoenix LiveView.",
         url: "https://elixir-hero.fly.dev/",
-        github: "https://github.com/stuartjohnpage/elixir_hero",
-        tags: ["Elixir", "Phoenix LiveView", "Rust", "WASM", "Web Audio API"]
+        github: "https://github.com/stuartjohnpage/elixir_hero"
       },
       %{
         name: "Flappy Phoenix",
@@ -19,21 +18,42 @@ defmodule StuartPageLiveWeb.Content do
           "A Flappy Bird clone built entirely in Phoenix LiveView with power-ups, increasing difficulty, and a scoring system.",
         url: "https://flappyphoenix.fly.dev/",
         github: "https://github.com/stuartjohnpage/flappyphoenix",
-        blog: "https://revelry.co/insights/development/elixir/build-flappybird-using-liveview/",
-        tags: ["Elixir", "Phoenix LiveView", "Game Dev"]
+        blog: "https://revelry.co/insights/development/elixir/build-flappybird-using-liveview/"
       },
       %{
         name: "Unwrapped",
         description:
           "A gift-tracking app for large families that prevents duplicate gifts while keeping each person's presents a surprise. Currently in development.",
         url: nil,
-        github: "https://github.com/stuartjohnpage/unwrapped",
-        tags: ["Elixir", "Phoenix", "PostgreSQL"]
+        github: "https://github.com/stuartjohnpage/unwrapped"
       }
     ]
   end
 
   def featured_projects, do: projects()
+
+  def open_source do
+    [
+      %{
+        name: "TextChunker",
+        description:
+          "An Elixir library for segmenting large text documents, optimizing them for embedding and storage within vector databases for RAG applications. Inspired by LangChain's text splitters.",
+        github: "https://github.com/revelrylabs/text_chunker_ex",
+        hex: "https://hex.pm/packages/text_chunker",
+        stars: 108,
+        blog: "https://revelry.co/insights/artificial-intelligence/announcing-textchunker/"
+      },
+      %{
+        name: "DeltaQuery",
+        description:
+          "A high-level Elixir client for querying shared Delta tables across organizations. Supports filtering, joins, aggregations, and returns native Elixir data structures.",
+        github: "https://github.com/revelrylabs/delta_query",
+        hex: "https://hex.pm/packages/delta_query",
+        stars: 13,
+        blog: "https://revelry.co/insights/elixir-delta-sharing-with-delta-query/"
+      }
+    ]
+  end
 
   def posts do
     [

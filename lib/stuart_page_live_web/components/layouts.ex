@@ -53,6 +53,11 @@ defmodule StuartPageLiveWeb.Layouts do
             </a>
           </li>
           <li>
+            <a href="https://www.linkedin.com/in/stuartjohnpage" target="_blank" class="btn btn-ghost btn-sm">
+              LinkedIn
+            </a>
+          </li>
+          <li>
             <a href="https://revelry.co" target="_blank" class="btn btn-ghost btn-sm">
               Revelry
             </a>
