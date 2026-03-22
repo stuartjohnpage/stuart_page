@@ -105,3 +105,108 @@
 [data-phx-session], [data-phx-teleported-src] { display: contents }
 
 /* This file is for your main application CSS */
+
+/* Scroll-triggered fade-in animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children animations */
+.fade-in-children > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-children.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-children.visible > *:nth-child(1) { transition-delay: 0ms; }
+.fade-in-children.visible > *:nth-child(2) { transition-delay: 80ms; }
+.fade-in-children.visible > *:nth-child(3) { transition-delay: 160ms; }
+.fade-in-children.visible > *:nth-child(4) { transition-delay: 240ms; }
+.fade-in-children.visible > *:nth-child(5) { transition-delay: 320ms; }
+.fade-in-children.visible > *:nth-child(6) { transition-delay: 400ms; }
+
+/* Gradient text for hero heading */
+.gradient-text {
+  background: linear-gradient(135deg, oklch(55% 0.18 15), oklch(65% 0.15 25), oklch(45% 0.12 350));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .gradient-text {
+  background: linear-gradient(135deg, oklch(70% 0.16 15), oklch(75% 0.13 25), oklch(65% 0.14 350));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated ring on profile photo */
+.profile-ring {
+  position: relative;
+}
+
+.profile-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg, oklch(55% 0.18 15), oklch(65% 0.15 25), oklch(45% 0.12 350), oklch(55% 0.18 15));
+  animation: spin-slow 8s linear infinite;
+  z-index: -1;
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+/* Card glow on hover */
+.card-glow {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.card-glow:hover {
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 0 30px -5px oklch(55% 0.18 15 / 0.15);
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .card-glow:hover {
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.3),
+    0 0 30px -5px oklch(55% 0.18 15 / 0.25);
+}
+
+/* Smooth page transitions */
+main {
+  animation: page-enter 0.3s ease-out;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section divider lines */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, oklch(55% 0.18 15 / 0.3), transparent);
+}

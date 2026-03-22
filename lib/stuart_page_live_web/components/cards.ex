@@ -10,7 +10,7 @@ defmodule StuartPageLiveWeb.Cards do
 
   def project_card(assigns) do
     ~H"""
-    <div class="card bg-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-200">
+    <div class="card bg-base-200 card-glow">
       <div class="card-body">
         <h3 class="card-title">{@project.name}</h3>
         <p class="text-base-content/70 leading-relaxed">{@project.description}</p>
@@ -34,7 +34,7 @@ defmodule StuartPageLiveWeb.Cards do
 
   def oss_card(assigns) do
     ~H"""
-    <div class="card bg-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-200">
+    <div class="card bg-base-200 card-glow">
       <div class="card-body">
         <div class="flex items-center gap-3">
           <h3 class="card-title">{@oss.name}</h3>
@@ -69,7 +69,7 @@ defmodule StuartPageLiveWeb.Cards do
     <a
       href={@post.url}
       target="_blank"
-      class="group card bg-base-200 shadow hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+      class="group card bg-base-200 card-glow"
     >
       <div class="card-body flex-row justify-between items-center py-5 gap-4">
         <h3 class="font-medium group-hover:text-primary transition-colors">{@post.title}</h3>

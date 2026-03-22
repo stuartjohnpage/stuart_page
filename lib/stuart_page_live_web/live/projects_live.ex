@@ -16,20 +16,24 @@ defmodule StuartPageLiveWeb.ProjectsLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <section class="py-16 max-w-5xl mx-auto">
-      <div class="mb-12">
-        <h1 class="text-4xl font-bold mb-2">Projects</h1>
-        <p class="text-base-content/60">Things I've built, mostly with Elixir and Phoenix.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <.project_card :for={project <- @projects} project={project} />
-      </div>
+    <div id="projects" phx-hook="ScrollFade">
+      <section class="py-16 max-w-5xl mx-auto">
+        <div class="mb-12 fade-in">
+          <h1 class="text-4xl font-bold mb-2 gradient-text">Projects</h1>
+          <p class="text-base-content/60">Things I've built, mostly with Elixir and Phoenix.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-children">
+          <.project_card :for={project <- @projects} project={project} />
+        </div>
 
-      <h2 class="text-3xl font-bold mt-20 mb-10">Open Source</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <.oss_card :for={oss <- @open_source} oss={oss} />
-      </div>
-    </section>
+        <div class="section-divider my-16"></div>
+
+        <h2 class="text-3xl font-bold mb-10 fade-in">Open Source</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in-children">
+          <.oss_card :for={oss <- @open_source} oss={oss} />
+        </div>
+      </section>
+    </div>
     """
   end
 end
