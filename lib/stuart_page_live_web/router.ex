@@ -8,6 +8,11 @@ defmodule StuartPageLiveWeb.Router do
     plug :put_root_layout, html: {StuartPageLiveWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :clacks
+  end
+
+  defp clacks(conn, _opts) do
+    Plug.Conn.put_resp_header(conn, "x-clacks-overhead", "GNU Terry Pratchett")
   end
 
   scope "/", StuartPageLiveWeb do
