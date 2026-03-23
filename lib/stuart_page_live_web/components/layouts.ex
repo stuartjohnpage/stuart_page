@@ -44,26 +44,6 @@ defmodule StuartPageLiveWeb.Layouts do
           
           <li><.link navigate={~p"/writing"} class="btn btn-ghost btn-sm">Writing</.link></li>
           
-          <li>
-            <a href="https://github.com/stuartjohnpage" target="_blank" class="btn btn-ghost btn-sm">
-              GitHub
-            </a>
-          </li>
-          
-          <li>
-            <a
-              href="https://www.linkedin.com/in/stuartjohnpage"
-              target="_blank"
-              class="btn btn-ghost btn-sm"
-            >
-              LinkedIn
-            </a>
-          </li>
-          
-          <li>
-            <a href="https://revelry.co" target="_blank" class="btn btn-ghost btn-sm">Revelry</a>
-          </li>
-          
           <li><.theme_toggle /></li>
         </ul>
       </div>
@@ -83,11 +63,6 @@ defmodule StuartPageLiveWeb.Layouts do
             
             <li><.link navigate={~p"/writing"}>Writing</.link></li>
             
-            <li><a href="https://github.com/stuartjohnpage" target="_blank">GitHub</a></li>
-            
-            <li><a href="https://www.linkedin.com/in/stuartjohnpage" target="_blank">LinkedIn</a></li>
-            
-            <li><a href="https://revelry.co" target="_blank">Revelry</a></li>
           </ul>
         </div>
       </div>
