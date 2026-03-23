@@ -99,6 +99,42 @@ defmodule StuartPageLiveWeb.HomeLive do
         </div>
       </section>
 
+      <%!-- About --%>
+      <section class="py-12 sm:py-20 fade-in">
+        <div class="bg-base-200 rounded-box p-8 sm:p-12 max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6">A bit about me</h2>
+
+          <div class="space-y-4 text-base-content/80 leading-relaxed text-base">
+            <p>
+              I studied American history and then psychology at the University of Nottingham, which is
+              a perfectly normal pipeline into software engineering if you don't think about
+              it too hard. After a bootcamp in New Orleans, I joined
+              <a href="https://revelry.co" target="_blank" class="link link-primary">Revelry</a>
+              as an apprentice in 2021 and have been there ever since — building everything from
+              AI platforms with RAG pipelines to cryptocurrency accountancy tools to the occasional
+              game in LiveView.
+            </p>
+
+            <p>
+              These days I spend most of my time in Elixir and Phoenix, though I've been known
+              to try my hand at TypeScript, Python, and whatever else the project demands. I'm a
+              peer coach, and have mentored apprentices through Revelry's program, so I guess the
+              psychology study wasn't entirely wasted (I'm still waiting on the history though). I've
+              spoken at TECNext and GigCityElixir about building AI applications in Elixir.
+            </p>
+
+            <p>
+              I write regularly on
+              <a href="https://revelry.co/author/stuart-page/" target="_blank" class="link link-primary">Revelry's blog</a>
+              about AI, security, Elixir, and whatever else I'm thinking about. I use AI
+              extensively in my programming, but I try to keep it out of my writing. Writing is the best
+              tool I have for stress-testing my own understanding, and running my thoughts through
+              an LLM would rather defeat the point..!
+            </p>
+          </div>
+        </div>
+      </section>
+
       <div class="section-divider my-4"></div>
       <%!-- Featured Writing --%>
       <section class="py-10 sm:py-16 fade-in">
