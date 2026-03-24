@@ -99,53 +99,53 @@ defmodule StuartPageLive.Content do
       %Post{
         title: "How to Maintain Your Joy as a Developer in the Age of AI",
         url: "https://revelry.co/insights/artificial-intelligence/joy-developing-with-ai/",
-        date: "2025"
+        date: "June 2025"
       },
       %Post{
         title: "How to Use Hermes MCP to Boost Your AI Chat App",
         url: "https://revelry.co/insights/integrating-hermes-mcp-into-phoenix/",
-        date: "2025"
+        date: "May 2025"
       },
       %Post{
         title:
           "How to Run Your Own Private LLM Server and Keep Your Old Windows Gaming Laptop Relevant",
         url: "https://revelry.co/insights/how-to-run-a-private-llm-server-on-a-laptop/",
-        date: "2025"
+        date: "April 2025"
       },
       %Post{
         title: "Build a Game in Phoenix LiveView Without JavaScript",
         url: "https://revelry.co/insights/development/elixir/build-flappybird-using-liveview/",
-        date: "2024"
+        date: "December 2024"
       },
       %Post{
         title: "Announcing TextChunker: Flexible Semantic Text Chunking for Elixir",
         url: "https://revelry.co/insights/artificial-intelligence/announcing-textchunker/",
-        date: "2024"
+        date: "March 2024"
       },
       %Post{
         title: "Understanding and Using Reinforcement Learning",
         url: "https://revelry.co/insights/demystifying-reinforcement-learning/",
-        date: "2024"
+        date: "December 2023"
       },
       %Post{
         title: "Lessons Learned from the Hackers Hall of Infamy",
         url: "https://revelry.co/insights/development/lessons-learned-from-hackers/",
-        date: "2024"
+        date: "June 2023"
       },
       %Post{
         title: "Stop Camouflaging Your Software Bugs",
         url: "https://revelry.co/insights/processes/camouflaged-software-bugs/",
-        date: "2024"
+        date: "October 2022"
       },
       %Post{
         title: "The Bitcoin Extended Public Key: Explaining the Mystery",
         url: "https://revelry.co/insights/blockchain/bitcoin-extended-public-key/",
-        date: "2023"
+        date: "June 2022"
       },
       %Post{
         title: "Your Brain != A Computer",
         url: "https://revelry.co/off-the-beaten-path/brains-computers/",
-        date: "2023"
+        date: "April 2022"
       }
     ]
   end
