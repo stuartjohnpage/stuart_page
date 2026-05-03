@@ -75,6 +75,11 @@ defmodule StuartPageLive.Content do
   def posts do
     [
       %Post{
+        title: "Should You Run an Apprenticeship Program in 2026? If So…How?",
+        url: "https://revelry.co/insights/apprentice-program/apprenticeship-program-2026/",
+        date: "April 2026"
+      },
+      %Post{
         title: "DeltaQuery: Simple Delta Sharing for Elixir",
         url: "https://revelry.co/insights/elixir-delta-sharing-with-delta-query/",
         date: "February 2026"
