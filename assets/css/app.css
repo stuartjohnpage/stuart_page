@@ -17,80 +17,123 @@
   themes: false;
 }
 
-/* daisyUI theme plugin. You can update this file by fetching the latest version with:
-  curl -sLO https://github.com/saadeghi/daisyui/releases/latest/download/daisyui-theme.js
-  We ship with two themes, a light one inspired on Phoenix colors and a dark one inspired
-  on Elixir colors. Build your own at: https://daisyui.com/theme-generator/ */
-/* Maroon dark theme */
+/* "Ink" dark theme — warm near-black stock, candlelit terracotta accents */
 @plugin "../vendor/daisyui-theme" {
   name: "dark";
   default: false;
   prefersdark: true;
   color-scheme: "dark";
-  --color-base-100: oklch(22% 0.02 10);
-  --color-base-200: oklch(18% 0.018 10);
-  --color-base-300: oklch(14% 0.015 10);
-  --color-base-content: oklch(95% 0.01 10);
-  --color-primary: oklch(55% 0.18 15);
-  --color-primary-content: oklch(97% 0.01 10);
-  --color-secondary: oklch(45% 0.12 350);
-  --color-secondary-content: oklch(97% 0.01 350);
-  --color-accent: oklch(65% 0.15 25);
-  --color-accent-content: oklch(97% 0.01 25);
-  --color-neutral: oklch(30% 0.03 10);
-  --color-neutral-content: oklch(95% 0.005 10);
-  --color-info: oklch(58% 0.158 241.966);
-  --color-info-content: oklch(97% 0.013 236.62);
-  --color-success: oklch(60% 0.118 184.704);
-  --color-success-content: oklch(98% 0.014 180.72);
-  --color-warning: oklch(66% 0.179 58.318);
-  --color-warning-content: oklch(98% 0.022 95.277);
-  --color-error: oklch(58% 0.2 20);
-  --color-error-content: oklch(96% 0.015 12.422);
-  --radius-selector: 0.25rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
+  --color-base-100: oklch(21% 0.012 50);
+  --color-base-200: oklch(18.5% 0.011 50);
+  --color-base-300: oklch(15.5% 0.01 50);
+  --color-base-content: oklch(89% 0.02 85);
+  --color-primary: oklch(70% 0.125 35);
+  --color-primary-content: oklch(18% 0.012 50);
+  --color-secondary: oklch(74% 0.05 250);
+  --color-secondary-content: oklch(18% 0.012 50);
+  --color-accent: oklch(78% 0.1 85);
+  --color-accent-content: oklch(18% 0.012 50);
+  --color-neutral: oklch(28% 0.015 50);
+  --color-neutral-content: oklch(89% 0.02 85);
+  --color-info: oklch(70% 0.1 245);
+  --color-info-content: oklch(18% 0.012 50);
+  --color-success: oklch(70% 0.1 155);
+  --color-success-content: oklch(18% 0.012 50);
+  --color-warning: oklch(75% 0.12 80);
+  --color-warning-content: oklch(18% 0.012 50);
+  --color-error: oklch(62% 0.17 25);
+  --color-error-content: oklch(96% 0.013 85);
+  --radius-selector: 0.125rem;
+  --radius-field: 0.125rem;
+  --radius-box: 0.125rem;
   --size-selector: 0.21875rem;
   --size-field: 0.21875rem;
-  --border: 1.5px;
-  --depth: 1;
+  --border: 1px;
+  --depth: 0;
   --noise: 0;
 }
 
-/* Maroon light theme */
+/* "Paper" light theme — warm cream stock, oxblood ink accents */
 @plugin "../vendor/daisyui-theme" {
   name: "light";
   default: true;
   prefersdark: false;
   color-scheme: "light";
-  --color-base-100: oklch(98% 0.005 10);
-  --color-base-200: oklch(95% 0.008 10);
-  --color-base-300: oklch(90% 0.012 10);
-  --color-base-content: oklch(20% 0.02 10);
-  --color-primary: oklch(42% 0.16 15);
-  --color-primary-content: oklch(97% 0.01 10);
-  --color-secondary: oklch(52% 0.1 350);
-  --color-secondary-content: oklch(97% 0.01 350);
-  --color-accent: oklch(35% 0.12 10);
-  --color-accent-content: oklch(98% 0.005 10);
-  --color-neutral: oklch(35% 0.03 10);
-  --color-neutral-content: oklch(98% 0 0);
-  --color-info: oklch(62% 0.214 259.815);
-  --color-info-content: oklch(97% 0.014 254.604);
-  --color-success: oklch(70% 0.14 182.503);
-  --color-success-content: oklch(98% 0.014 180.72);
-  --color-warning: oklch(66% 0.179 58.318);
-  --color-warning-content: oklch(98% 0.022 95.277);
-  --color-error: oklch(50% 0.2 20);
-  --color-error-content: oklch(96% 0.015 12.422);
-  --radius-selector: 0.25rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
+  --color-base-100: oklch(96.5% 0.013 85);
+  --color-base-200: oklch(93.5% 0.017 83);
+  --color-base-300: oklch(88.5% 0.022 80);
+  --color-base-content: oklch(24% 0.02 40);
+  --color-primary: oklch(43% 0.14 25);
+  --color-primary-content: oklch(96.5% 0.013 85);
+  --color-secondary: oklch(42% 0.06 255);
+  --color-secondary-content: oklch(96.5% 0.013 85);
+  --color-accent: oklch(58% 0.1 75);
+  --color-accent-content: oklch(24% 0.02 40);
+  --color-neutral: oklch(30% 0.02 40);
+  --color-neutral-content: oklch(95% 0.013 85);
+  --color-info: oklch(55% 0.12 245);
+  --color-info-content: oklch(96.5% 0.013 85);
+  --color-success: oklch(52% 0.1 155);
+  --color-success-content: oklch(96.5% 0.013 85);
+  --color-warning: oklch(65% 0.13 75);
+  --color-warning-content: oklch(24% 0.02 40);
+  --color-error: oklch(48% 0.16 25);
+  --color-error-content: oklch(96.5% 0.013 85);
+  --radius-selector: 0.125rem;
+  --radius-field: 0.125rem;
+  --radius-box: 0.125rem;
   --size-selector: 0.21875rem;
   --size-field: 0.21875rem;
-  --border: 1.5px;
-  --depth: 1;
+  --border: 1px;
+  --depth: 0;
   --noise: 0;
+}
+
+/* Self-hosted type — variable woff2 files live in priv/static/fonts */
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/fraunces.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/fraunces-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/newsreader.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/newsreader-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Spline Sans Mono";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/spline-sans-mono.woff2") format("woff2");
+}
+
+@theme {
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-mono: "Spline Sans Mono", ui-monospace, "Cascadia Mono", monospace;
 }
 
 /* Add variants based on LiveView classes */
@@ -104,9 +147,193 @@
 /* Make LiveView wrapper divs transparent for layout */
 [data-phx-session], [data-phx-teleported-src] { display: contents }
 
-/* This file is for your main application CSS */
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
 
-/* Scroll-triggered fade-in animations */
+body {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: color-mix(in oklab, var(--color-primary) 22%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Paper grain — a fixed film of turbulence noise over everything */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  opacity: 0.06;
+}
+
+[data-theme="dark"] body::after {
+  mix-blend-mode: screen;
+  opacity: 0.05;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body::after {
+    mix-blend-mode: screen;
+    opacity: 0.05;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Print apparatus                                                     */
+/* ------------------------------------------------------------------ */
+
+/* Classic double hairline, as under a newspaper masthead */
+.masthead-rule {
+  height: 4px;
+  border-top: 1px solid color-mix(in oklab, var(--color-base-content) 60%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-base-content) 60%, transparent);
+}
+
+/* Small-caps mono links with a drawn-on underline */
+.ed-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.ed-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.ed-link:hover {
+  color: var(--color-primary);
+}
+
+.ed-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Solid ink button */
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.7rem 1.25rem;
+  background: var(--color-base-content);
+  color: var(--color-base-100);
+  border: 1px solid var(--color-base-content);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-ink:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/* Photographs printed on the page: slightly sepia plates */
+.img-print {
+  filter: sepia(0.16) contrast(1.02);
+  transition: filter 0.4s ease;
+}
+
+.img-print:hover {
+  filter: none;
+}
+
+/* Framed plate: hairline border plus an offset outline frame */
+.img-plate {
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 55%, transparent);
+  outline: 1px solid color-mix(in oklab, var(--color-base-content) 25%, transparent);
+  outline-offset: 6px;
+}
+
+/* Cards as printing plates — hard offset shadow that deepens on hover */
+.ed-card {
+  box-shadow: 4px 4px 0 color-mix(in oklab, var(--color-base-content) 10%, transparent);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease;
+}
+
+.ed-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 color-mix(in oklab, var(--color-primary) 35%, transparent);
+  border-color: color-mix(in oklab, var(--color-base-content) 50%, transparent);
+}
+
+/* Prose links — underlined like a marked-up proof */
+.prose-ed a {
+  color: var(--color-primary);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklab, var(--color-primary) 40%, transparent);
+  transition: text-decoration-color 0.2s ease;
+}
+
+.prose-ed a:hover {
+  text-decoration-color: var(--color-primary);
+}
+
+/* Opening drop cap */
+.has-dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 3.4em;
+  line-height: 0.8;
+  float: left;
+  padding-right: 0.12em;
+  padding-top: 0.08em;
+  color: var(--color-primary);
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion                                                              */
+/* ------------------------------------------------------------------ */
+
+/* Page-load reveal, staggered with .rise-1 … .rise-6 */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.15s; }
+.rise-3 { animation-delay: 0.28s; }
+.rise-4 { animation-delay: 0.4s; }
+.rise-5 { animation-delay: 0.5s; }
+.rise-6 { animation-delay: 0.65s; }
+
+/* Scroll-triggered fade-in animations (see ScrollFade hook in app.js) */
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
@@ -136,61 +363,8 @@
 .fade-in-children.visible > *:nth-child(4) { transition-delay: 240ms; }
 .fade-in-children.visible > *:nth-child(5) { transition-delay: 320ms; }
 .fade-in-children.visible > *:nth-child(6) { transition-delay: 400ms; }
-
-/* Gradient text for hero heading */
-.gradient-text {
-  background: linear-gradient(135deg, oklch(55% 0.18 15), oklch(65% 0.15 25), oklch(45% 0.12 350));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-bottom: 0.1em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-[data-theme="dark"] .gradient-text {
-  background: linear-gradient(135deg, oklch(70% 0.16 15), oklch(75% 0.13 25), oklch(65% 0.14 350));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Animated ring on profile photo */
-.profile-ring {
-  position: relative;
-}
-
-.profile-ring::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 9999px;
-  background: conic-gradient(from 0deg, oklch(55% 0.18 15), oklch(65% 0.15 25), oklch(45% 0.12 350), oklch(55% 0.18 15));
-  animation: spin-slow 8s linear infinite;
-  z-index: -1;
-}
-
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
-}
-
-/* Card glow on hover */
-.card-glow {
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.card-glow:hover {
-  box-shadow:
-    0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 0 30px -5px oklch(55% 0.18 15 / 0.15);
-  transform: translateY(-4px);
-}
-
-[data-theme="dark"] .card-glow:hover {
-  box-shadow:
-    0 20px 25px -5px rgb(0 0 0 / 0.3),
-    0 0 30px -5px oklch(55% 0.18 15 / 0.25);
-}
+.fade-in-children.visible > *:nth-child(7) { transition-delay: 480ms; }
+.fade-in-children.visible > *:nth-child(8) { transition-delay: 560ms; }
 
 /* Smooth page transitions */
 main {
@@ -208,8 +382,21 @@ main {
   }
 }
 
-/* Section divider lines */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, oklch(55% 0.18 15 / 0.3), transparent);
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  main {
+    animation: none !important;
+  }
+
+  .fade-in,
+  .fade-in-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .ed-card,
+  .btn-ink {
+    transition: none !important;
+  }
 }

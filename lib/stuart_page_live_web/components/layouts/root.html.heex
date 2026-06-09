@@ -4,9 +4,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title default="Stuart Page" suffix=" · Elixir Developer">
+    <meta
+      name="description"
+      content="Stuart Page — software engineer at Revelry building real-time web applications with Elixir & Phoenix, writing about AI, security, and software."
+    />
+    <.live_title default="Stuart Page — Software & Writing">
       {assigns[:page_title]}
     </.live_title>
+    <link rel="preload" href={~p"/fonts/fraunces.woff2"} as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href={~p"/fonts/newsreader.woff2"}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={~p"/fonts/spline-sans-mono.woff2"}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}>
     </script>
