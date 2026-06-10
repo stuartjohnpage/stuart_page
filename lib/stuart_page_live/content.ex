@@ -26,7 +26,7 @@ defmodule StuartPageLive.Content do
       %Project{
         name: "Elixir Hero",
         description:
-          "A real-time guitar toolkit with a tuner, amp effects chain with oscilloscope, and a rhythm game — all powered by Rust/WASM audio processing and Phoenix LiveView.",
+          "A real-time guitar toolkit with a tuner, amp effects chain with oscilloscope, and a rhythm game, all powered by Rust/WASM audio processing and Phoenix LiveView.",
         url: "https://elixir-hero.fly.dev/",
         github: "https://github.com/stuartjohnpage/elixir_hero"
       },

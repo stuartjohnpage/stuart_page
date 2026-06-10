@@ -40,7 +40,7 @@ defmodule StuartPageLiveWeb.WritingLive do
       <section class="mx-auto max-w-3xl py-10 sm:py-14">
         <header class="mb-8 sm:mb-12">
           <p class="rise rise-1 flex justify-between border-b border-base-content/20 pb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-base-content/55">
-            <span>Stuart Page — Complete index</span>
+            <span>Stuart Page · Complete index</span>
             <span class="hidden sm:inline">{@post_count} posts</span>
           </p>
 
@@ -55,7 +55,7 @@ defmodule StuartPageLiveWeb.WritingLive do
           <aside class="rise rise-4 mt-6 max-w-2xl border-l-2 border-primary/60 pl-5">
             <p class="text-[15px] italic leading-relaxed text-base-content/70">
               <span class="font-mono text-[10px] uppercase not-italic tracking-[0.18em] text-primary">
-                Editor's note —
+                Editor's note:
               </span>
               I use AI extensively in my programming, but almost never in my writing. Writing is how
               I communicate my thoughts, to others and to myself, and running them through an LLM
