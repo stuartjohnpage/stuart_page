@@ -1,0 +1,14 @@
+# Force LF on checkout for all text files. The HEEx formatter mishandles
+# CRLF input (it restructures templates around the stray \r), so letting
+# core.autocrlf write CRLF on Windows makes `mix format` mangle templates
+# after every checkout/merge.
+* text=auto eol=lf
+
+# Belt and braces for binary assets (text=auto should detect these anyway)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
