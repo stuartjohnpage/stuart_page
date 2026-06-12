@@ -20,7 +20,7 @@ defmodule StuartPageLiveWeb.ProjectsLive do
       <section class="py-10 sm:py-14">
         <header class="mb-10 sm:mb-14">
           <p class="rise rise-1 border-b border-base-content/20 pb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-base-content/55">
-            Stuart Page — Index of works
+            Stuart Page · Index of works
           </p>
 
           <h1 class="rise rise-2 mt-8 font-display text-4xl font-semibold tracking-tight sm:text-5xl">

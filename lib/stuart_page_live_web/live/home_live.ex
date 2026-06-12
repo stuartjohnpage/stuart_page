@@ -23,7 +23,7 @@ defmodule StuartPageLiveWeb.HomeLive do
        open_source: Content.open_source(),
        posts: Content.featured_posts(),
        toolkit: @toolkit,
-       page_title: "Stuart Page — Software & Writing"
+       page_title: "Stuart Page"
      )}
   end
 
@@ -34,7 +34,7 @@ defmodule StuartPageLiveWeb.HomeLive do
       <%!-- Front page --%>
       <section class="pt-10 sm:pt-14">
         <p class="rise rise-1 flex justify-between border-b border-base-content/20 pb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-base-content/55">
-          <span>Vol. VI — Texas, by way of the UK</span>
+          <span>Vol. VI · Texas, by way of the UK</span>
           <span class="hidden sm:inline">Software &amp; Writing</span>
         </p>
 
@@ -94,7 +94,7 @@ defmodule StuartPageLiveWeb.HomeLive do
               a perfectly normal pipeline into software engineering if you don't think about
               it too hard. After a bootcamp in New Orleans, I joined
               <a href="https://revelry.co" target="_blank">Revelry</a>
-              as an apprentice in 2021 and have been there ever since — building everything from
+              as an apprentice in 2021 and have been there ever since, building everything from
               AI platforms with RAG pipelines to cryptocurrency accountancy tools to the occasional
               game in LiveView.
             </p>
@@ -124,7 +124,7 @@ defmodule StuartPageLiveWeb.HomeLive do
 
             <ul class="space-y-2.5 font-mono text-sm text-base-content/80">
               <li :for={tool <- @toolkit} class="flex items-baseline gap-3">
-                <span class="text-primary">—</span> {tool}
+                <span class="text-primary">·</span> {tool}
               </li>
             </ul>
           </aside>
@@ -192,7 +192,7 @@ defmodule StuartPageLiveWeb.HomeLive do
               class="img-print h-80 w-full border border-base-content/20 object-cover"
             />
             <figcaption class="pb-1 pt-4 text-center text-sm italic leading-relaxed text-base-content/70">
-              Fig. 2 — Mowgli, who produced all of this code by
+              Fig. 2: Mowgli, who produced all of this code by
               <span class="font-semibold not-italic">not</span>
               walking on the keyboard.
             </figcaption>

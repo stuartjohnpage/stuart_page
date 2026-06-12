@@ -26,7 +26,7 @@ defmodule StuartPageLive.Content do
       %Project{
         name: "Elixir Hero",
         description:
-          "A real-time guitar toolkit with a tuner, amp effects chain with oscilloscope, and a rhythm game — all powered by Rust/WASM audio processing and Phoenix LiveView.",
+          "A real-time guitar toolkit with a tuner, amp effects chain with oscilloscope, and a rhythm game, all powered by Rust/WASM audio processing and Phoenix LiveView.",
         url: "https://elixir-hero.fly.dev/",
         github: "https://github.com/stuartjohnpage/elixir_hero"
       },
@@ -74,6 +74,11 @@ defmodule StuartPageLive.Content do
 
   def posts do
     [
+      %Post{
+        title: "The AI Silo: How LLMs Are Quietly Killing Engineering Culture",
+        url: "https://revelry.co/insights/artificial-intelligence/ai-silos-killing-culture/",
+        date: "June 2026"
+      },
       %Post{
         title: "Should You Run an Apprenticeship Program in 2026? If So…How?",
         url: "https://revelry.co/insights/apprentice-program/apprenticeship-program-2026/",
