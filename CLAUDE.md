@@ -22,7 +22,7 @@ mix assets.deploy      # Minify + digest assets for prod
 
 ## Architecture
 
-**No database** — all content is defined as in-memory structs in `lib/stuart_page_live/content.ex` (projects, open-source libs, blog posts). Blog posts live in `priv/posts.json` (newest first, loaded at compile time); a weekly GitHub Action (`update-posts.yml`) runs `scripts/update_posts.exs` against the Revelry author RSS feed and opens a PR when a new article appears — fix title casing on the PR before merging.
+**No database** — all content is defined as in-memory structs in `lib/stuart_page_live/content.ex` (projects, open-source libs, blog posts). Blog posts live in `priv/posts.json` (newest first, loaded at compile time); a monthly GitHub Action (`update-posts.yml`) runs `scripts/update_posts.exs` against the Revelry author RSS feed and opens a PR when a new article appears — fix title casing on the PR before merging.
 
 ### Routes (3 pages)
 

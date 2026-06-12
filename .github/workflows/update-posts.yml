@@ -1,4 +1,4 @@
-# Checks the Revelry author feed for new articles every Monday and opens a
+# Checks the Revelry author feed for new articles monthly and opens a
 # PR when one is found. Feed titles arrive sentence-case — fix the casing on
 # the PR before merging (merging to main auto-deploys via fly-deploy.yml).
 
@@ -6,7 +6,7 @@ name: Update posts from Revelry feed
 
 on:
   schedule:
-    - cron: "0 13 * * 1" # Mondays 13:00 UTC
+    - cron: "0 13 1 * *" # 1st of each month, 13:00 UTC
   workflow_dispatch:
 
 permissions:
