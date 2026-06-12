@@ -4,6 +4,10 @@ defmodule StuartPageLive.Content do
 
   All data is defined as structs with enforced keys, so missing fields
   cause compile-time errors rather than silent template failures.
+
+  Blog posts live in `priv/posts.json` (newest first) and are loaded at
+  compile time, so `scripts/update_posts.exs` can append new articles
+  without touching code.
   """
 
   defmodule Project do
@@ -72,93 +76,17 @@ defmodule StuartPageLive.Content do
     ]
   end
 
-  def posts do
-    [
-      %Post{
-        title: "The AI Silo: How LLMs Are Quietly Killing Engineering Culture",
-        url: "https://revelry.co/insights/artificial-intelligence/ai-silos-killing-culture/",
-        date: "June 2026"
-      },
-      %Post{
-        title: "Should You Run an Apprenticeship Program in 2026? If So…How?",
-        url: "https://revelry.co/insights/apprentice-program/apprenticeship-program-2026/",
-        date: "April 2026"
-      },
-      %Post{
-        title: "DeltaQuery: Simple Delta Sharing for Elixir",
-        url: "https://revelry.co/insights/elixir-delta-sharing-with-delta-query/",
-        date: "February 2026"
-      },
-      %Post{
-        title: "How and When to Use NimbleParsec",
-        url: "https://revelry.co/insights/development/elixir/nimbleparsec/",
-        date: "November 2025"
-      },
-      %Post{
-        title: "Which Language is Best for AI Code Generation?",
-        url:
-          "https://revelry.co/insights/artificial-intelligence/which-language-is-best-for-ai-code-generation/",
-        date: "October 2025"
-      },
-      %Post{
-        title: "Why Your AI Code Bias is Making You a Worse Reviewer",
-        url:
-          "https://revelry.co/insights/artificial-intelligence/your-ai-code-bias-makes-you-a-worse-reviewer/",
-        date: "September 2025"
-      },
-      %Post{
-        title: "How to Maintain Your Joy as a Developer in the Age of AI",
-        url: "https://revelry.co/insights/artificial-intelligence/joy-developing-with-ai/",
-        date: "June 2025"
-      },
-      %Post{
-        title: "How to Use Hermes MCP to Boost Your AI Chat App",
-        url: "https://revelry.co/insights/integrating-hermes-mcp-into-phoenix/",
-        date: "May 2025"
-      },
-      %Post{
-        title:
-          "How to Run Your Own Private LLM Server and Keep Your Old Windows Gaming Laptop Relevant",
-        url: "https://revelry.co/insights/how-to-run-a-private-llm-server-on-a-laptop/",
-        date: "April 2025"
-      },
-      %Post{
-        title: "Build a Game in Phoenix LiveView Without JavaScript",
-        url: "https://revelry.co/insights/development/elixir/build-flappybird-using-liveview/",
-        date: "December 2024"
-      },
-      %Post{
-        title: "Announcing TextChunker: Flexible Semantic Text Chunking for Elixir",
-        url: "https://revelry.co/insights/artificial-intelligence/announcing-textchunker/",
-        date: "March 2024"
-      },
-      %Post{
-        title: "Understanding and Using Reinforcement Learning",
-        url: "https://revelry.co/insights/demystifying-reinforcement-learning/",
-        date: "December 2023"
-      },
-      %Post{
-        title: "Lessons Learned from the Hackers Hall of Infamy",
-        url: "https://revelry.co/insights/development/lessons-learned-from-hackers/",
-        date: "June 2023"
-      },
-      %Post{
-        title: "Stop Camouflaging Your Software Bugs",
-        url: "https://revelry.co/insights/processes/camouflaged-software-bugs/",
-        date: "October 2022"
-      },
-      %Post{
-        title: "The Bitcoin Extended Public Key: Explaining the Mystery",
-        url: "https://revelry.co/insights/blockchain/bitcoin-extended-public-key/",
-        date: "June 2022"
-      },
-      %Post{
-        title: "Your Brain != A Computer",
-        url: "https://revelry.co/off-the-beaten-path/brains-computers/",
-        date: "April 2022"
-      }
-    ]
-  end
+  @posts_path Path.expand("../../priv/posts.json", __DIR__)
+  @external_resource @posts_path
+
+  @posts Enum.map(
+           Jason.decode!(File.read!(@posts_path)),
+           fn %{"title" => title, "url" => url, "date" => date} ->
+             struct!(Post, title: title, url: url, date: date)
+           end
+         )
+
+  def posts, do: @posts
 
   def featured_posts, do: Enum.take(posts(), 4)
 end

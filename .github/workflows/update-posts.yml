@@ -1,0 +1,44 @@
+# Checks the Revelry author feed for new articles every Monday and opens a
+# PR when one is found. Feed titles arrive sentence-case — fix the casing on
+# the PR before merging (merging to main auto-deploys via fly-deploy.yml).
+
+name: Update posts from Revelry feed
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Mondays 13:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-posts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: "1.17.2"
+          otp-version: "27"
+
+      - name: Check feed for new posts
+        run: elixir scripts/update_posts.exs
+
+      - name: Open pull request if posts.json changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/update-posts
+          delete-branch: true
+          commit-message: "Add latest article(s) from Revelry feed"
+          title: "New Revelry article detected"
+          body: |
+            Automated update from the [Revelry author feed](https://revelry.co/author/stuart-page/feed/).
+
+            **Before merging:**
+            - [ ] Fix title casing (feed titles are sentence-case; the site uses title case)
+            - [ ] Check the date and URL look right
+
+            Merging to `main` deploys automatically.
