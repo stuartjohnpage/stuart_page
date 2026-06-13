@@ -13,7 +13,7 @@ defmodule StuartPageLiveWeb.HomeLiveTest do
     conn = get(conn, ~p"/projects")
     response = html_response(conn, 200)
     assert response =~ "Elixir Hero"
-    assert response =~ "Unwrapped"
+    assert response =~ "Dead Giveaway"
   end
 
   test "GET /writing renders writing page", %{conn: conn} do

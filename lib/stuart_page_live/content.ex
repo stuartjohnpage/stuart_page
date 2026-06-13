@@ -39,10 +39,11 @@ defmodule StuartPageLive.Content do
         blog: "https://revelry.co/insights/development/elixir/build-flappybird-using-liveview/"
       },
       %Project{
-        name: "Unwrapped",
+        name: "Dead Giveaway",
         description:
-          "A gift-tracking app for large families that prevents duplicate gifts while keeping each person's presents a surprise. Currently in development.",
-        github: "https://github.com/stuartjohnpage/unwrapped"
+          "A multiplayer hidden-identity game where you spawn among identical AI characters and must reach the finish line without rival players deducing which one is you. Powered by Phoenix Channels driving a 20 Hz authoritative server simulation, rendered with Pixi.js and WebGL.",
+        url: "https://dead-giveaway-game.fly.dev/",
+        github: "https://github.com/stuartjohnpage/dead_giveaway"
       }
     ]
   end
