@@ -41,7 +41,7 @@ defmodule StuartPageLive.Content do
       %Project{
         name: "Dead Giveaway",
         description:
-          "A multiplayer hidden-identity game where you spawn among identical AI characters and must reach the finish line without rival players deducing which one is you. Powered by Phoenix Channels driving a 20 Hz authoritative server simulation, rendered with Pixi.js and WebGL.",
+          "A fun online party game where you have to figure out who you are, who your friends are, and get to the finish line first! Built with Phoenix, Pixi.js and WebGL.",
         url: "https://dead-giveaway-game.fly.dev/",
         github: "https://github.com/stuartjohnpage/dead_giveaway"
       }
