@@ -76,6 +76,11 @@ defmodule StuartPageLive.Content do
   def posts do
     [
       %Post{
+        title: "A manifesto against AI prose",
+        url: "https://revelry.co/insights/artificial-intelligence/say-no-to-ai-prose/",
+        date: "September 2026"
+      },
+      %Post{
         title: "The AI Silo: How LLMs Are Quietly Killing Engineering Culture",
         url: "https://revelry.co/insights/artificial-intelligence/ai-silos-killing-culture/",
         date: "June 2026"
